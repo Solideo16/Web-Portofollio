@@ -1,69 +1,110 @@
 document.getElementById('kontakForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = this;
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(response => {
-    if (response.ok) {
-      form.reset();
-      document.getElementById('successMessage').style.display = 'block';
-    } else {
-      alert("Gagal mengirim pesan. Silakan coba lagi.");
+      e.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          document.getElementById('successMessage').style.display = 'block';
+        } else {
+          alert("Gagal mengirim pesan. Silakan coba lagi.");
+        }
+      }).catch(error => {
+        alert("Terjadi kesalahan.");
+      });
+    });
+
+    const canvas = document.getElementById("dragonCanvas");
+    const ctx = canvas.getContext("2d");
+    const width = canvas.width;
+    const height = canvas.height;
+    let angle = 0;
+
+    function drawLeaf(x, y, rotation) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      const gradient = ctx.createRadialGradient(0, -6, 0, 0, -6, 12);
+      gradient.addColorStop(0, "cyan");
+      gradient.addColorStop(1, "red");
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(4, -6, 0, -12);
+      ctx.quadraticCurveTo(-4, -6, 0, 0);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      ctx.restore();
     }
-  }).catch(error => {
-    alert("Terjadi kesalahan.");
-  });
-});
 
-// Animasi melingkari foto
-const canvas = document.getElementById("dragonCanvas");
-const ctx = canvas.getContext("2d");
-const width = canvas.width;
-const height = canvas.height;
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const radius = 90;
+      const leafCount = 100;
+      for (let i = 0; i < leafCount; i++) {
+        const offset = i * 0.2;
+        const dynamicRadius = radius + Math.sin(angle + i * 0.5) * 10;
+        const x = centerX + dynamicRadius * Math.cos(angle + offset);
+        const y = centerY + dynamicRadius * Math.sin(angle + offset);
+        const rotation = angle + offset;
+        drawLeaf(x, y, rotation);
+      }
+      angle += 0.02;
+      requestAnimationFrame(animate);
+    }
+    animate();
 
-let angle = 0;
+    const carousel = document.getElementById('carousel');
+    let startX, currentX, isDragging = false;
+    let rotAngle = -18;
+    const itemCount = 10;
+    const rotationStep = 360 / itemCount;
 
-function drawLeaf(x, y, rotation) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.rotate(rotation);
-  const gradient = ctx.createRadialGradient(0, -6, 0, 0, -6, 12);
-  gradient.addColorStop(0, "cyan");
-  gradient.addColorStop(1, "red");
+    const rotateCarousel = () => {
+      carousel.style.transform = `translateZ(-650px) rotateY(${rotAngle}deg)`;
+    };
 
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.quadraticCurveTo(4, -6, 0, -12);
-  ctx.quadraticCurveTo(-4, -6, 0, 0);
-  ctx.fillStyle = gradient;
-  ctx.fill();
+    carousel.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+    });
 
-  ctx.restore();
-}
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      currentX = e.clientX;
+    });
 
-function animate() {
-  ctx.clearRect(0, 0, width, height);
+    window.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      let diff = currentX - startX;
+      if (Math.abs(diff) > 50) {
+        rotAngle += (diff < 0 ? -rotationStep : rotationStep);
+        rotateCarousel();
+      }
+    });
 
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const radius = 90;
-  const leafCount = 100;
+    carousel.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+    });
 
-  for (let i = 0; i < leafCount; i++) {
-    const offset = i * 0.2;
-    const dynamicRadius = radius + Math.sin(angle + i * 0.5) * 10;
+    carousel.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+    });
 
-    const x = centerX + dynamicRadius * Math.cos(angle + offset);
-    const y = centerY + dynamicRadius * Math.sin(angle + offset);
-    const rotation = angle + offset;
+    carousel.addEventListener('touchend', () => {
+      isDragging = false;
+      let diff = currentX - startX;
+      if (Math.abs(diff) > 50) {
+        rotAngle += (diff < 0 ? -rotationStep : rotationStep);
+        rotateCarousel();
+      }
+    });
 
-    drawLeaf(x, y, rotation);
-  }
-
-  angle += 0.02;
-  requestAnimationFrame(animate);
-}
-
-animate();
+    rotateCarousel();
