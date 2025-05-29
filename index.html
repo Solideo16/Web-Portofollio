@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profil Soli Deo</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
   <h1>Halo, Sobat Branding</h1>
-  
   <div id="container">
     <canvas id="dragonCanvas" width="300" height="300"></canvas>
     <img id="fotoSaya" src="https://i.imgur.com/PvkSG6I.jpg" alt="Foto Saya" />
   </div>
-  
+
   <p class="justify"><strong>Saya Soli Deo</strong>, seorang Desainer Product dan Branding.</p>
   <p class="justify">Saya sedang berkuliah di <strong>Institut Teknologi Sumatera</strong> dengan program studi <strong>Desain Komunikasi Visual</strong>.</p>
-  
+
   <h2>Hobi Saya</h2>
   <ul>
     <li>Membaca</li>
@@ -26,41 +18,44 @@
     <li>Membuat Aplikasi</li>
     <li>Membranding Product</li>
   </ul>
-  
+
   <h2>Branding itu Sangat Penting</h2>
-  <p class="justify">Branding adalah hal yang sangat penting dalam membangun citra sebuah produk di benak konsumen. Branding bukan hanya tentang logo atau desain semata, tetapi juga tentang bagaimana konsumen merasakan, mengingat, dan mempercayai produk kita. Ketika branding dikelola dengan baik, maka produk akan lebih mudah dikenali, lebih dipercaya, dan bahkan bisa membuat konsumen merasa terhubung secara emosional. Inilah yang kemudian bisa mendorong loyalitas pelanggan dan membuat mereka mau terus menggunakan produk kita, bahkan merekomendasikannya ke orang lain.</p>
-  
-  <p class="justify">Menjaga branding berarti menjaga konsistensi dalam cara kita menyampaikan pesan, desain visual, hingga pelayanan kepada pengguna. Sementara itu, menciptakan branding yang kuat berarti membentuk karakter dan identitas produk yang berbeda dari kompetitor, serta mampu mewakili nilai-nilai dan tujuan yang ingin disampaikan oleh brand tersebut. Branding yang jelas dan konsisten bisa meningkatkan nilai suatu produk karena konsumen tidak hanya membeli karena fungsi, tapi juga karena citra dan pengalaman yang mereka rasakan.</p>
-  
-  <p class="justify">Dalam konteks produk aplikasi, branding memiliki peran yang sangat besar. Branding menentukan bagaimana aplikasi dilihat dan dirasakan oleh pengguna, mulai dari ikon di Play Store/App Store, tampilan antarmuka, warna, gaya bahasa, hingga nada komunikasi yang digunakan dalam notifikasi. Aplikasi dengan branding yang kuat akan terasa lebih profesional dan menyenangkan untuk digunakan. Bahkan, branding juga berpengaruh pada seberapa sering pengguna ingin kembali menggunakan aplikasi tersebut. Dengan kata lain, branding bukan hanya soal visual, tapi juga menyangkut keseluruhan pengalaman pengguna. Maka dari itu, menciptakan branding yang kuat dan konsisten pada sebuah aplikasi bisa menjadi kunci sukses dalam memenangkan hati pengguna di tengah persaingan digital yang ketat.</p>
-  
+  <p class="justify">Branding adalah hal yang sangat penting dalam membangun citra sebuah produk...</p>
+
+  <h2>Carousel</h2>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="card" style="--i:0"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:1"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:2"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:3"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:4"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:5"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:6"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:7"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:8"><span>COMING<br>SOON</span></div>
+      <div class="card" style="--i:9"><span>COMING<br>SOON</span></div>
+    </div>
+    <p class="hint">Geser untuk memutar carousel ↔️</p>
+  </div>
+
   <h2>Hubungi Saya</h2>
   <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false" />
-    
     <label for="nama">Nama:</label>
-    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
-  
+    <input type="text" id="nama" name="nama" required />
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
-  
+    <input type="email" id="email" name="email" required />
     <label for="pesan">Pesan:</label>
-    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-  
+    <textarea id="pesan" name="pesan" rows="5" required></textarea>
     <button type="submit" class="submit-button">Kirim</button>
   </form>
-  
   <div id="successMessage" class="success-message" style="display:none;">
     Pesan kamu sudah terkirim! 🎉 Terima kasih ya.
   </div>
-  
+
   <div class="social">
     <h2>Ikuti Saya</h2>
     <a href="https://instagram.com/solideouxui" target="_blank">Instagram</a>
     <a href="mailto:solideo123456@gmail.com">Email</a>
   </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
-			
