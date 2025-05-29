@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Soli Deo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Halo, Sobat Branding</h1>
+  <div id="container">
+    <canvas id="dragonCanvas" width="300" height="300"></canvas>
+    <img id="fotoSaya" src="https://i.imgur.com/PvkSG6I.jpg" alt="Foto Saya" />
+  </div>
+
+  <p class="justify"><strong>Saya Soli Deo</strong>, seorang Desainer Product dan Branding...</p>
+
+  <h2>Hobi Saya</h2>
+  <ul>
+    <li>Membaca</li>
+    <li>Ngoding</li>
+    <li>Bermain musik</li>
+    <li>Membuat Aplikasi</li>
+    <li>Membranding Product</li>
+  </ul>
+
+  <h2>Branding itu Sangat Penting</h2>
+  <p class="justify">Branding bukan hanya soal logo dan warna...</p>
+
+  <h2>Carousel</h2>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- 10 Cards -->
+      <div class="card" style="--i:0"><span>COMING<br>SOON</span></div>
+      <!-- ... sampai --i:9 -->
+      <div class="card" style="--i:9"><span>COMING<br>SOON</span></div>
+    </div>
+    <p class="hint">Geser untuk memutar carousel ↔️</p>
+  </div>
+
+  <h2>Hubungi Saya</h2>
+  <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false" />
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <label for="pesan">Pesan:</label>
+    <textarea id="pesan" name="pesan" rows="5" required></textarea>
+    <button type="submit" class="submit-button">Kirim</button>
+  </form>
+  <div id="successMessage" class="success-message" style="display:none; text-align:center;">
+    Pesan kamu sudah terkirim! 🎉 Terima kasih ya.
+  </div>
+
+  <div class="social">
+    <h2>Ikuti Saya</h2>
+    <a href="https://instagram.com/solideouxui" target="_blank">Instagram</a>
+    <a href="mailto:solideo123456@gmail.com">Email</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
