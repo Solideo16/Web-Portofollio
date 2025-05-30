@@ -14,8 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden; /* Hanya menyembunyikan overflow horizontal */
-  overflow-y: auto;   /* Mengizinkan scroll vertikal */
+  overflow-x: hidden;
 }
 
 /* ========== Tipografi & Teks ========== */
@@ -145,6 +144,16 @@ textarea::placeholder {
   max-width: 600px;
   height: 150px;
   display: block;
+  font-size: 3rem;
+  color: #00ffff;
+  text-align: center;
+  letter-spacing: 5px; /* Menambahkan jarak antar karakter */
+  text-shadow: 
+    0 0 10px #00ffff, 
+    0 0 20px #00ffff, 
+    0 0 30px #00ffff, 
+    0 0 40px #00ffff;
+  animation: glowEffect 3s ease-in-out infinite;
 }
 
 /* ========== Galeri Interaktif ========== */
@@ -214,4 +223,30 @@ textarea::placeholder {
   margin: 30px 0;
   text-shadow: 0 0 10px #00ffff;
 }
+
+/* ========== Animasi Glow untuk Teks LunoVA ========== */
+@keyframes glowEffect {
+  0% {
+    text-shadow: 
+      0 0 10px #00ffff, 
+      0 0 20px #00ffff, 
+      0 0 30px #00ffff, 
+      0 0 40px #00ffff;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #00ffff, 
+      0 0 30px #00ffff, 
+      0 0 40px #00ffff, 
+      0 0 50px #00ffff;
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #00ffff, 
+      0 0 20px #00ffff, 
+      0 0 30px #00ffff, 
+      0 0 40px #00ffff;
+  }
+}
+
 
