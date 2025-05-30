@@ -2,109 +2,130 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profil Soli Deo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Soli Deo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Halo, Sobat Branding</h1>
+  <!-- Header Utama -->
+  <header>
+    <h1>Selamat datang di Portofolio Saya</h1>
+  </header>
 
-  <!-- Foto dan Canvas Naga -->
-  <div id="container">
-    <canvas id="dragonCanvas" width="300" height="300"></canvas>
-    <img id="fotoSaya" src="https://i.imgur.com/PvkSG6I.jpg" alt="Foto Saya" />
-  </div>
+  <!-- Hero: Foto & Canvas -->
+  <section id="profil">
+    <h2>Halo, Sobat Branding</h2>
+    <div id="container">
+      <canvas id="dragonCanvas" width="300" height="300"></canvas>
+      <img id="fotoSaya" src="https://i.imgur.com/PvkSG6I.jpg" alt="Foto Saya" />
+    </div>
+    <p class="justify">
+      <strong>Saya Soli Deo</strong>, sebagai inisiator agency <strong>LunoVA</strong>,
+      desainer UI/UX branding product dan marketing strategis.
+    </p>
+    <div class="glowing-text-container">
+      <canvas id="glowingTextCanvas"></canvas>
+    </div>
+    <p class="justify">
+      Saya pernah berkuliah di <strong>Institut Teknologi Sumatera</strong> dengan program studi
+      <strong>Desain Komunikasi Visual</strong>.
+    </p>
+  </section>
 
-  <!-- Deskripsi -->
-  <p class="justify"><strong>Saya Soli Deo</strong>, Sebagai Inisiator Agency <strong>LunoVA</strong> Desainer UI/UX branding product dan marketing strategis.</p>
-
-  <!-- Canvas untuk Tulisan Glowing -->
-  <div class="glowing-text-container">
-    <canvas id="glowingTextCanvas"></canvas>
-  </div>
-
-  <p class="justify">Saya pernah berkuliah di <strong>Institut Teknologi Sumatera</strong> dengan program studi <strong>Desain Komunikasi Visual</strong>.</p>
+  <!-- Frame Profesi -->
+  <section id="solideoFrame">
+    <h2>Soli Deo</h2>
+    <h3>UI/UX Designer, Front-End Developer, Back-End Developer</h3>
+    <div class="roles">
+      <p class="role">UI/UX Designer</p>
+      <p class="role">Front-End Developer</p>
+      <p class="role">Back-End Developer</p>
+    </div>
+  </section>
 
   <!-- Kegiatan -->
-  <h2>Kegiatan Kami</h2>
-  <ul>
-    <li>Membaca</li>
-    <li>Brand Campaign dengan Analisis Target Market</li>
-    <li>Mengkoding (index.html, style.css, script.js, Node.js, Python, PHP, Ruby, Java, C#)</li>
-    <li>Membranding produk melalui social media</li>
-    <li>Membangun karakteristik branding sesuai target pasar</li>
-  </ul>
+  <section>
+    <h2>Kegiatan Kami</h2>
+    <ul>
+      <li>Membaca</li>
+      <li>Brand Campaign dengan Analisis Target Market</li>
+      <li>Mengkoding (HTML, CSS, JS, Node.js, Python, PHP, Ruby, Java, C#)</li>
+      <li>Membranding produk melalui social media</li>
+      <li>Membangun karakteristik branding sesuai target pasar</li>
+    </ul>
+  </section>
 
-  <!-- Penjelasan Branding -->
-  <h2>Branding itu Sangat Penting</h2>
-  <p class="justify">Branding adalah hal yang sangat penting dalam membangun citra sebuah produk di benak konsumen...</p>
-  <p class="justify">Menjaga branding berarti menjaga konsistensi dalam cara kita menyampaikan pesan...</p>
-  <p class="justify">Dalam konteks produk aplikasi, branding memiliki peran yang sangat besar...</p>
+  <!-- Branding -->
+  <section>
+    <h2>Branding itu Sangat Penting</h2>
+    <p class="justify">
+      Branding adalah hal yang sangat penting dalam membangun citra sebuah produk di benak konsumen.
+    </p>
+    <p class="justify">
+      Menjaga branding berarti menjaga konsistensi dalam cara kita menyampaikan pesan kepada audiens.
+    </p>
+    <p class="justify">
+      Dalam konteks produk aplikasi, branding memiliki peran yang sangat besar dalam diferensiasi dan loyalitas pengguna.
+    </p>
+  </section>
 
-  <!-- Galeri -->
-  <h1>Pengalaman kami, menjadi karya terbaik Anda</h1>
-  <div class="container">
-    <div>
+  <!-- Galeri Tim -->
+  <section>
+    <h2>Pengalaman kami, menjadi karya terbaik Anda</h2>
+    <div class="container">
       <div class="content">
         <img src="https://i.imgur.com/2cH6kdW.jpg" alt="Foto Soli Deo" style="width: 100%; height: auto; border-radius: 15px;" />
-        <h2 style="text-align: center;">Soli Deo</h2>
+        <h3 style="text-align: center;">Soli Deo</h3>
         <span style="display: block; text-align: center;">Brand Marketing Strategis & UX Designer</span>
       </div>
-    </div>
-    <div>
       <div class="content">
-        <h2>Jane Doe</h2>
+        <h3>Jane Doe</h3>
         <span>UI & UX Designer</span>
       </div>
-    </div>
-    <div>
       <div class="content">
-        <h2>Alex Smith</h2>
+        <h3>Alex Smith</h3>
         <span>Front-end Developer</span>
       </div>
-    </div>
-    <div>
       <div class="content">
-        <h2>Emily</h2>
+        <h3>Emily</h3>
         <span>Back-end Developer</span>
       </div>
     </div>
-  </div>
-
-  <h2 class="coming-soon">Coming Soon</h2>
+    <h2 class="coming-soon">Coming Soon</h2>
+  </section>
 
   <!-- Form Kontak -->
-  <h2>Hubungi Kami</h2>
-  <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false" />
-    
-    <label for="nama">Nama:</label>
-    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
-  
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
-  
-    <label for="pesan">Pesan:</label>
-    <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-  
-    <button type="submit" class="submit-button">Kirim</button>
-  </form>
+  <section>
+    <h2>Hubungi Kami</h2>
+    <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
 
-  <!-- Pesan Sukses -->
-  <div id="successMessage" class="success-message" style="display:none;">
-    Pesan kamu sudah terkirim! 🎉 Terima kasih ya.
-  </div>
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+      <button type="submit" class="submit-button">Kirim</button>
+    </form>
+
+    <div id="successMessage" class="success-message" style="display:none;">
+      Pesan kamu sudah terkirim! 🎉 Terima kasih ya.
+    </div>
+  </section>
 
   <!-- Sosial Media -->
-  <div class="social">
-    <h2>Ikuti kami</h2>
-    <a href="https://www.instagram.com/solideo_uxui?igsh=MTYyb3A2ajh5YXZnNQ==" target="_blank">Instagram</a>
+  <footer>
+    <h2>Ikuti Kami</h2>
+    <a href="https://www.instagram.com/solideo_uxui?igsh=MTYyb3A2ajh5YXZnNQ==" target="_blank">Instagram</a> |
     <a href="mailto:solideo123456@gmail.com">Email</a>
-  </div>
+  </footer>
 
   <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
-
