@@ -1,9 +1,10 @@
 // =====================
 // Form Submit Handler
 // =====================
-document.getElementById('kontakForm').addEventListener('submit', function(e) {
+document.getElementById('kontakForm').addEventListener('submit', function (e) {
   e.preventDefault();
   const form = this;
+
   fetch(form.action, {
     method: "POST",
     body: new FormData(form),
@@ -12,10 +13,13 @@ document.getElementById('kontakForm').addEventListener('submit', function(e) {
     if (response.ok) {
       form.reset();
       document.getElementById('successMessage').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000); // Sembunyikan pesan sukses setelah 5 detik
     } else {
       alert("Gagal mengirim pesan. Silakan coba lagi.");
     }
-  }).catch(error => {
+  }).catch(() => {
     alert("Terjadi kesalahan.");
   });
 });
@@ -27,10 +31,12 @@ const dragonCanvas = document.getElementById("dragonCanvas");
 const dragonCtx = dragonCanvas.getContext("2d");
 
 function resizeDragonCanvas() {
-  dragonCanvas.width = dragonCanvas.clientWidth;
-  dragonCanvas.height = dragonCanvas.clientHeight;
+  const container = dragonCanvas.parentElement;
+  dragonCanvas.width = container.clientWidth;
+  dragonCanvas.height = container.clientHeight;
 }
 resizeDragonCanvas();
+window.addEventListener("resize", resizeDragonCanvas);
 
 let angle = 0;
 
@@ -38,6 +44,7 @@ function drawLeaf(x, y, rotation) {
   dragonCtx.save();
   dragonCtx.translate(x, y);
   dragonCtx.rotate(rotation);
+
   const gradient = dragonCtx.createRadialGradient(0, -6, 0, 0, -6, 12);
   gradient.addColorStop(0, "cyan");
   gradient.addColorStop(1, "red");
@@ -83,10 +90,10 @@ const glowingCtx = glowingTextCanvas.getContext("2d");
 
 function resizeGlowingCanvas() {
   glowingTextCanvas.width = window.innerWidth;
-  glowingTextCanvas.height = 150; // Fixed height for consistency
+  glowingTextCanvas.height = 150;
 }
-window.addEventListener("resize", resizeGlowingCanvas);
 resizeGlowingCanvas();
+window.addEventListener("resize", resizeGlowingCanvas);
 
 let glowingStartTime = null;
 const gradientWidth = 200;
@@ -106,36 +113,35 @@ function drawGlowingText(timestamp) {
   const centerX = glowingTextCanvas.width / 2;
   const centerY = glowingTextCanvas.height / 2;
 
-  // ✅ Ganti ukuran font agar setara dengan h1 (2rem)
-  glowingCtx.font = "bold 2rem sans-serif";  // 2rem setara dengan ukuran h1 pada CSS kamu
+  // Ukuran font setara h1 (2rem = 32px jika 1rem = 16px)
+  glowingCtx.font = "bold 32px sans-serif";
   glowingCtx.textAlign = "center";
   glowingCtx.textBaseline = "middle";
 
-  // Hitam sebagai garis dasar
+  // Shadow dasar
   glowingCtx.lineWidth = 4;
   glowingCtx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
   glowingCtx.strokeText(text, centerX, centerY);
 
-  // Gradient dari kiri
+  // Gradient kiri
   const gradientLeft = glowingCtx.createLinearGradient(
     shiftLeft, 0,
     shiftLeft + gradientWidth, 0
   );
   gradientLeft.addColorStop(0, 'transparent');
-  gradientLeft.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
+  gradientLeft.addColorStop(0.5, 'cyan');
   gradientLeft.addColorStop(1, 'transparent');
 
-  // Gradient dari kanan
+  // Gradient kanan
   const gradientRight = glowingCtx.createLinearGradient(
     shiftRight, 0,
     shiftRight + gradientWidth, 0
   );
   gradientRight.addColorStop(0, 'transparent');
-  gradientRight.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
+  gradientRight.addColorStop(0.5, 'cyan');
   gradientRight.addColorStop(1, 'transparent');
 
   glowingCtx.lineWidth = 6;
-
   glowingCtx.strokeStyle = gradientLeft;
   glowingCtx.strokeText(text, centerX, centerY);
 
@@ -144,5 +150,5 @@ function drawGlowingText(timestamp) {
 
   requestAnimationFrame(drawGlowingText);
 }
-
 requestAnimationFrame(drawGlowingText);
+
