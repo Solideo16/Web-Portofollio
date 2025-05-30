@@ -93,7 +93,7 @@ function drawGlowingText(timestamp) {
   const centerX = glowingTextCanvas.width / 2;
   const centerY = glowingTextCanvas.height / 2;
 
-  glowingCtx.font = "bold 150px sans-serif";
+  glowingCtx.font = "bold 500px sans-serif";
   glowingCtx.textAlign = "center";
   glowingCtx.textBaseline = "middle";
 
