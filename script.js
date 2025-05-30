@@ -93,7 +93,7 @@ function drawGlowingText(timestamp) {
   const centerX = glowingTextCanvas.width / 2;
   const centerY = glowingTextCanvas.height / 2;
 
-  glowingCtx.font = "bold 2rem sans-serif";
+  ctx.font = "bold 2rem sans-serif";  // Menyesuaikan ukuran font dengan h1
   glowingCtx.textAlign = "center";
   glowingCtx.textBaseline = "middle";
 
