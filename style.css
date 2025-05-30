@@ -5,15 +5,16 @@
   box-sizing: border-box;
 }
 
-/* Body dan Layout */
+/* Body dan layout utama */
 body {
+  margin: 0;
+  padding: 20px;
   min-height: 100vh;
   display: grid;
   place-items: start;
   background-color: #000;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
   overflow: hidden;
 }
 
@@ -95,7 +96,7 @@ label {
   color: #00ffff;
 }
 
-/* Gambar profil dengan canvas */
+/* Gambar profil dengan canvas efek */
 #container {
   position: relative;
   width: 300px;
@@ -123,17 +124,18 @@ label {
   z-index: 0;
 }
 
-/* Menambahkan gaya untuk canvas teks */
+/* Canvas teks LunoVA */
 .glowing-text-container {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 #glowingTextCanvas {
-  width: 80%;
+  width: 100%;
+  max-width: 600px;
   height: 150px;
+  display: block;
 }
 
 /* Galeri interaktif */
@@ -146,7 +148,6 @@ label {
   gap: 10px;
   margin: 40px auto;
 }
-
 .container > div {
   flex: 0 0 120px;
   border-radius: 0.5rem;
@@ -156,7 +157,6 @@ label {
   position: relative;
   overflow: hidden;
 }
-
 .container > div:nth-of-type(1) {
   background: url('IMG_4542.jpeg') no-repeat center/cover;
 }
@@ -169,7 +169,6 @@ label {
 .container > div:nth-of-type(4) {
   background: url('https://i.imgur.com/3.jpg') no-repeat center/cover;
 }
-
 .container > div .content {
   font-size: 1.2rem;
   color: #fff;
@@ -185,13 +184,11 @@ label {
   transition: 0.5s ease-in-out;
   visibility: hidden;
 }
-
 .container > div:hover {
   flex: 0 0 250px;
   box-shadow: 1px 3px 15px #00ffff;
   transform: translateY(-3px);
 }
-
 .container > div:hover .content {
   opacity: 1;
   transform: translateY(0);
@@ -207,13 +204,3 @@ label {
   text-shadow: 0 0 10px #00ffff;
 }
 
-/* Canvas khusus */
-body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #000;
-}
-
-canvas {
-  display: block;
-}
