@@ -67,3 +67,74 @@ function animate() {
 }
 
 animate();
+
+// **Effect for Glowing Text (LunoVA)**
+const glowingTextCanvas = document.getElementById("glowingTextCanvas");
+const glowingCtx = glowingTextCanvas.getContext("2d");
+let glowingStartTime = null;
+const gradientWidth = 200;
+const duration = 2000; // durasi 2 detik
+const text = "LunoVA";
+
+function resizeGlowingCanvas() {
+  glowingTextCanvas.width = window.innerWidth;
+  glowingTextCanvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resizeGlowingCanvas);
+resizeGlowingCanvas();
+
+function drawGlowingText(timestamp) {
+  if (!glowingStartTime) glowingStartTime = timestamp;
+  const elapsed = timestamp - glowingStartTime;
+  const progress = (elapsed % duration) / duration;
+
+  const shiftLeft = progress * (glowingTextCanvas.width + gradientWidth * 2) - gradientWidth;
+  const shiftRight = glowingTextCanvas.width - shiftLeft - gradientWidth;
+
+  glowingCtx.clearRect(0, 0, glowingTextCanvas.width, glowingTextCanvas.height);
+
+  const centerX = glowingTextCanvas.width / 2;
+  const centerY = glowingTextCanvas.height / 2;
+
+  glowingCtx.font = "bold 72px sans-serif";
+  glowingCtx.textAlign = "center";
+  glowingCtx.textBaseline = "middle";
+
+  // Stroke dasar hitam gelap agar teks tetap terlihat
+  glowingCtx.lineWidth = 4;
+  glowingCtx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
+  glowingCtx.strokeText(text, centerX, centerY);
+
+  // Gradient dari kiri
+  const gradientLeft = glowingCtx.createLinearGradient(
+    shiftLeft, 0,
+    shiftLeft + gradientWidth, 0
+  );
+  gradientLeft.addColorStop(0, 'transparent');
+  gradientLeft.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
+  gradientLeft.addColorStop(1, 'transparent');
+
+  // Gradient dari kanan
+  const gradientRight = glowingCtx.createLinearGradient(
+    shiftRight, 0,
+    shiftRight + gradientWidth, 0
+  );
+  gradientRight.addColorStop(0, 'transparent');
+  gradientRight.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
+  gradientRight.addColorStop(1, 'transparent');
+
+  glowingCtx.lineWidth = 6;
+
+  // Stroke dengan cahaya dari kiri
+  glowingCtx.strokeStyle = gradientLeft;
+  glowingCtx.strokeText(text, centerX, centerY);
+
+  // Stroke dengan cahaya dari kanan
+  glowingCtx.strokeStyle = gradientRight;
+  glowingCtx.strokeText(text, centerX, centerY);
+
+  requestAnimationFrame(drawGlowingText);
+}
+
+requestAnimationFrame(drawGlowingText);
