@@ -117,6 +117,19 @@ label {
   z-index: 0;
 }
 
+/* Menambahkan gaya untuk canvas teks */
+.glowing-text-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#glowingTextCanvas {
+  width: 80%;
+  height: 150px;
+}
+
 /* Galeri interaktif */
 .container {
   width: 100%;
