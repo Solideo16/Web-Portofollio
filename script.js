@@ -1,3 +1,4 @@
+// Event listener untuk form pengiriman kontak
 document.getElementById('kontakForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = this;
@@ -22,7 +23,6 @@ const canvas = document.getElementById("dragonCanvas");
 const ctx = canvas.getContext("2d");
 const width = canvas.width;
 const height = canvas.height;
-
 let angle = 0;
 
 function drawLeaf(x, y, rotation) {
@@ -39,13 +39,11 @@ function drawLeaf(x, y, rotation) {
   ctx.quadraticCurveTo(-4, -6, 0, 0);
   ctx.fillStyle = gradient;
   ctx.fill();
-
   ctx.restore();
 }
 
 function animate() {
   ctx.clearRect(0, 0, width, height);
-
   const centerX = width / 2;
   const centerY = height / 2;
   const radius = 90;
@@ -54,7 +52,6 @@ function animate() {
   for (let i = 0; i < leafCount; i++) {
     const offset = i * 0.2;
     const dynamicRadius = radius + Math.sin(angle + i * 0.5) * 10;
-
     const x = centerX + dynamicRadius * Math.cos(angle + offset);
     const y = centerY + dynamicRadius * Math.sin(angle + offset);
     const rotation = angle + offset;
@@ -68,14 +65,15 @@ function animate() {
 
 animate();
 
-// **Effect for Glowing Text (LunoVA)**
+// Efek teks bercahaya (LunoVA)
 const glowingTextCanvas = document.getElementById("glowingTextCanvas");
 const glowingCtx = glowingTextCanvas.getContext("2d");
 let glowingStartTime = null;
 const gradientWidth = 200;
-const duration = 2000; // durasi 2 detik
+const duration = 2000; // Durasi 2 detik
 const text = "LunoVA";
 
+// Resize canvas untuk teks bercahaya
 function resizeGlowingCanvas() {
   glowingTextCanvas.width = window.innerWidth;
   glowingTextCanvas.height = window.innerHeight;
@@ -88,12 +86,10 @@ function drawGlowingText(timestamp) {
   if (!glowingStartTime) glowingStartTime = timestamp;
   const elapsed = timestamp - glowingStartTime;
   const progress = (elapsed % duration) / duration;
-
   const shiftLeft = progress * (glowingTextCanvas.width + gradientWidth * 2) - gradientWidth;
   const shiftRight = glowingTextCanvas.width - shiftLeft - gradientWidth;
 
   glowingCtx.clearRect(0, 0, glowingTextCanvas.width, glowingTextCanvas.height);
-
   const centerX = glowingTextCanvas.width / 2;
   const centerY = glowingTextCanvas.height / 2;
 
@@ -101,36 +97,23 @@ function drawGlowingText(timestamp) {
   glowingCtx.textAlign = "center";
   glowingCtx.textBaseline = "middle";
 
-  // Stroke dasar hitam gelap agar teks tetap terlihat
   glowingCtx.lineWidth = 4;
   glowingCtx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
   glowingCtx.strokeText(text, centerX, centerY);
 
-  // Gradient dari kiri
-  const gradientLeft = glowingCtx.createLinearGradient(
-    shiftLeft, 0,
-    shiftLeft + gradientWidth, 0
-  );
+  const gradientLeft = glowingCtx.createLinearGradient(shiftLeft, 0, shiftLeft + gradientWidth, 0);
   gradientLeft.addColorStop(0, 'transparent');
   gradientLeft.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
   gradientLeft.addColorStop(1, 'transparent');
 
-  // Gradient dari kanan
-  const gradientRight = glowingCtx.createLinearGradient(
-    shiftRight, 0,
-    shiftRight + gradientWidth, 0
-  );
+  const gradientRight = glowingCtx.createLinearGradient(shiftRight, 0, shiftRight + gradientWidth, 0);
   gradientRight.addColorStop(0, 'transparent');
   gradientRight.addColorStop(0.5, 'rgba(0, 255, 255, 1)');
   gradientRight.addColorStop(1, 'transparent');
 
   glowingCtx.lineWidth = 6;
-
-  // Stroke dengan cahaya dari kiri
   glowingCtx.strokeStyle = gradientLeft;
   glowingCtx.strokeText(text, centerX, centerY);
-
-  // Stroke dengan cahaya dari kanan
   glowingCtx.strokeStyle = gradientRight;
   glowingCtx.strokeText(text, centerX, centerY);
 
@@ -138,3 +121,4 @@ function drawGlowingText(timestamp) {
 }
 
 requestAnimationFrame(drawGlowingText);
+
