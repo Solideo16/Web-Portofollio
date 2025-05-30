@@ -52,13 +52,11 @@ form {
   width: 100%;
   max-width: 500px;
   margin: 30px auto;
-  text-align: left; /* Menambahkan agar form rata kiri */
 }
 
 label {
   display: block;
   margin-top: 15px;
-  text-align: left; /* Menambahkan agar label rata kiri */
 }
 
 input, textarea {
@@ -69,9 +67,7 @@ input, textarea {
   padding: 10px;
   margin-top: 5px;
   width: 100%;
-  text-align: left; /* Menambahkan agar input dan textarea rata kiri */
 }
-
 input::placeholder,
 textarea::placeholder {
   color: #777;
@@ -180,35 +176,16 @@ textarea::placeholder {
   box-shadow: 1px 5px 15px #1e1e1e;
   position: relative;
   overflow: hidden;
-}
-.container > div:nth-of-type(1) {
-  background: url('IMG_4542.jpeg') no-repeat center/cover;
-}
-.container > div:nth-of-type(2) {
-  background: url('https://i.imgur.com/1.jpg') no-repeat center/cover;
-}
-.container > div:nth-of-type(3) {
-  background: url('https://i.imgur.com/2.jpg') no-repeat center/cover;
-}
-.container > div:nth-of-type(4) {
-  background: url('https://i.imgur.com/3.jpg') no-repeat center/cover;
+  width: 100%; /* Menambahkan agar tidak terpotong */
+  height: 100%; /* Menambahkan agar tidak terpotong */
 }
 
-.container > div .content {
-  font-size: 1.2rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+.container > div img {
+  width: 100%;
   height: 100%;
-  padding: 15px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(100%);
-  transition: 0.5s ease-in-out;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+  object-fit: cover; /* Menjaga gambar tetap utuh dan tercover dalam kotak */
 }
+
 .container > div:hover {
   flex: 0 0 250px;
   transform: translateY(-3px);
