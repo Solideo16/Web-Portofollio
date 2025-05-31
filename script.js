@@ -67,3 +67,36 @@ function animate() {
 }
 
 animate();
+
+let currentPage = 0;
+const totalPages = 3;
+
+function updatePages() {
+  for (let i = 1; i <= totalPages; i++) {
+    const page = document.getElementById(`page${i}`);
+    if (i <= currentPage) {
+      page.classList.add("curved", "rotated");
+      page.style.zIndex = i;
+    } else {
+      page.classList.remove("curved", "rotated");
+      page.style.zIndex = totalPages - i + 1;
+    }
+  }
+}
+
+function nextPage() {
+  if (currentPage < totalPages) {
+    currentPage++;
+    updatePages();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    updatePages();
+  }
+}
+
+// Inisialisasi saat halaman dibuka
+updatePages();
