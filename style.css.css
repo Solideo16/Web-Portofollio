@@ -1,0 +1,190 @@
+/* Reset dan dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: start;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Teks dan elemen umum */
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  color: #00ffff;
+}
+
+h1, h2, h3 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  margin-top: 30px;
+  text-align: center;
+  color: #00ffff;
+}
+
+p, .justify {
+  text-align: justify;
+}
+
+/* Form dan input */
+input, textarea {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+input::placeholder, textarea::placeholder {
+  color: #777;
+}
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #00ffff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.submit-button:hover {
+  background-color: #00cccc;
+}
+
+.success-message {
+  color: #00ff00;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Sosial media */
+.social {
+  margin-top: 30px;
+}
+.social a {
+  margin-right: 15px;
+  color: #00ffff;
+}
+
+/* Gambar profil dengan canvas */
+#container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 40px auto;
+}
+#dragonCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+#fotoSaya {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 5px solid cyan;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Galeri interaktif */
+.container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+  margin: 40px auto;
+}
+
+.container > div {
+  flex: 0 0 120px;
+  border-radius: 0.5rem;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  box-shadow: 1px 5px 15px #1e1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.container > div:nth-of-type(1) {
+  background: url('IMG_4542.jpeg') no-repeat center/cover;
+}
+.container > div:nth-of-type(2) {
+  background: url('https://i.imgur.com/1.jpg') no-repeat center/cover;
+}
+.container > div:nth-of-type(3) {
+  background: url('https://i.imgur.com/2.jpg') no-repeat center/cover;
+}
+.container > div:nth-of-type(4) {
+  background: url('https://i.imgur.com/3.jpg') no-repeat center/cover;
+}
+
+.container > div .content {
+  font-size: 1.2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  opacity: 0;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+  transform: translateY(100%);
+  transition: 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+.container > div:hover {
+  flex: 0 0 250px;
+  box-shadow: 1px 3px 15px #00ffff;
+  transform: translateY(-3px);
+}
+
+.container > div:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Teks Coming Soon */
+.coming-soon {
+  text-align: center;
+  color: #00ffff;
+  font-size: 1.8rem;
+  margin: 30px 0;
+  text-shadow: 0 0 10px #00ffff;
+}
+
