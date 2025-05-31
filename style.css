@@ -188,3 +188,84 @@ label {
   text-shadow: 0 0 10px #00ffff;
 }
 
+/* Flipbook Styles */
+.flipbook-container {
+  width: 600px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.book {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  perspective: 2000px;
+  margin: 0 auto;
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  transition: transform 1s ease;
+  backface-visibility: hidden;
+  box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.page.left {
+  left: 0;
+  transform-origin: left;
+  z-index: 3;
+  background: white;
+  border-right: 10px solid transparent; /* bolongan di kiri */
+  box-shadow: inset -10px 0 15px rgba(0,0,0,0.3);
+  border-radius: 0 5px 5px 0;
+}
+
+.page.right {
+  left: 50%;
+  transform-origin: right;
+  z-index: 2;
+  background: white;
+  border-left: 10px solid transparent; /* bolongan di kiri halaman kanan */
+  box-shadow: inset 10px 0 15px rgba(0,0,0,0.1);
+  border-radius: 5px 0 0 5px;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* Flip effect */
+.flipped {
+  transform: rotateY(-180deg);
+  z-index: 1 !important;
+}
+
+/* Controls styling */
+.controls {
+  margin-top: 15px;
+}
+
+.controls button {
+  padding: 10px 25px;
+  background-color: #00ffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.controls button:hover {
+  background-color: #00cccc;
+}
