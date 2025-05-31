@@ -67,3 +67,21 @@ function animate() {
 }
 
 animate();
+
+const pages = document.querySelectorAll('.page');
+let current = 0;
+
+function goNext() {
+  if (current < pages.length) {
+    pages[current].classList.add('flipped');
+    current++;
+  }
+}
+
+function goPrev() {
+  if (current > 0) {
+    current--;
+    pages[current].classList.remove('flipped');
+  }
+}
+
