@@ -100,35 +100,3 @@ function prevPage() {
 
 // Inisialisasi saat halaman dibuka
 updatePages();
-const images = [
-  "https://imgur.com/dUyphW6.jpg",
-  "https://imgur.com/kfdpRZm.jpg"
-];
-
-let currentIndex = 0;
-const imageElement = document.getElementById("laptopImage");
-
-function showImage(index) {
-  if (index >= 0 && index < images.length) {
-    imageElement.src = images[index];
-    currentIndex = index;
-  }
-}
-
-function nextImage() {
-  const nextIndex = (currentIndex + 1) % images.length;
-  showImage(nextIndex);
-}
-
-function prevImage() {
-  const prevIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(prevIndex);
-}
-
-// Optional: Tampilkan pesan sukses saat dikirim
-const form = document.getElementById("kontakForm");
-const successMessage = document.getElementById("successMessage");
-
-form.addEventListener("submit", function (e) {
-  successMessage.style.display = "block";
-});
