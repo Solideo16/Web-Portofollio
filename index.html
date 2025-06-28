@@ -119,6 +119,75 @@
   </div>
 </section>
 
+ <!-- ========================================== -->
+  <!-- MULAI: Interactive Laptop & Virtual Keyboard -->
+  <!-- ========================================== -->
+  <section id="interactive-laptop" style="margin: 60px auto; max-width: 720px;">
+    <h2>Simulasi Laptop Interaktif</h2>
+    <div class="wrapper">
+      <div class="laptop">
+        <div class="screen">
+          <img id="laptopImage" src="https://i.imgur.com/YM3I7Gr.png" alt="Desktop Image">
+          <div class="controls">
+            <button id="prevBtn">◀</button>
+            <button id="nextBtn">▶</button>
+          </div>
+          <textarea id="messageBox" placeholder="Tulis pesanmu di sini..."></textarea>
+          <button id="sendBtn">Kirim Pesan</button>
+        </div>
+      </div>
+
+      <div class="keyboard">
+        <!-- Baris Fungsi -->
+        <div class="keyboard-row">
+          <div class="key">Esc</div>
+          <div class="key">F1</div><div class="key">F2</div>…<div class="key">F12</div>
+        </div>
+        <!-- Baris Angka -->
+        <div class="keyboard-row">
+          <div class="key">~</div><div class="key">1</div>…<div class="key">=</div>
+          <div class="key wide" id="backKey">Back</div>
+        </div>
+        <!-- Baris Q–P -->
+        <div class="keyboard-row">
+          <div class="key wide">Tab</div>
+          <div class="key">Q</div>…<div class="key">P</div>
+          <div class="key">[</div><div class="key">]</div><div class="key">\\</div>
+        </div>
+        <!-- Baris A–L -->
+        <div class="keyboard-row">
+          <div class="key wide">Caps</div>
+          <div class="key">A</div>…<div class="key">L</div>
+          <div class="key">;</div><div class="key">'</div><div class="key wide">Enter</div>
+        </div>
+        <!-- Baris Z–M -->
+        <div class="keyboard-row">
+          <div class="key wide">Shift</div>
+          <div class="key">Z</div>…<div class="key">M</div>
+          <div class="key">,</div><div class="key">.</div><div class="key">/</div>
+          <div class="key wide">Shift</div>
+        </div>
+        <!-- Baris Spasi & Delete -->
+        <div class="keyboard-row">
+          <div class="key">Ctrl</div><div class="key">Win</div><div class="key">Alt</div>
+          <div class="key space">Space</div>
+          <div class="key">Alt</div><div class="key">Fn</div><div class="key">Menu</div><div class="key">Ctrl</div>
+          <div class="key" id="deleteKey">Del</div>
+          <div class="key" id="deleteWordKey">DelWord</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================================== -->
+  <!-- SELESAI: Interactive Laptop & Virtual Keyboard -->
+  <!-- ========================================== -->
+
+  <!-- … sisa kode form kontak, sosial media, script.js … -->
+  <h2>Hubungi Kami</h2>
+  <!-- form kontak seperti sebelumnya -->
+  <script src="script.js"></script>
+</body>	
+	
   <h2>Hubungi Kami</h2>
   <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false" />
