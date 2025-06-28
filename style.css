@@ -294,3 +294,76 @@ button {
 button:hover {
   background-color: #000;
 }
+.laptop-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 400px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.laptop-vertical {
+  border: 8px solid #333;
+  border-radius: 20px;
+  padding: 10px;
+  background: #000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.keyboard {
+  margin-top: 10px;
+  width: 100%;
+  background: #333;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.key {
+  background: #ccc;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 4px;
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
