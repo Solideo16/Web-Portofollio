@@ -241,3 +241,18 @@ sendBtn.addEventListener('click', () => {
   const body = encodeURIComponent(msgBox.value);
   window.location.href = `mailto:solideo123456@gmail.com?subject=${subject}&body=${body}`;
 });
+// … kode flipbook & form …
+
+// kode interaktif laptop:
+const images = [ /* … */ ];
+let currentIndex = 0;
+const imgEl = document.getElementById('laptopImage');
+// tombol navigasi
+document.getElementById('nextBtn').addEventListener('click', ()=>{ /* … */ });
+document.getElementById('prevBtn').addEventListener('click', ()=>{ /* … */ });
+// keyboard virtual
+document.querySelectorAll('#interactive-laptop .key').forEach(key=>{
+  key.addEventListener('click', ()=> onKeyClick(key.textContent));
+});
+// kirim via mailto
+document.getElementById('sendBtn').addEventListener('click', ()=>{ /* … */ });
