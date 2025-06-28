@@ -199,6 +199,85 @@ label {
   height: 400px;
   margin-top: 40px;
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #00ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.laptop {
+  width: 800px;
+  border: 8px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: 0 0 30px #00ffff;
+}
+
+.screen {
+  background: #000;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px solid #00ffff;
+}
+
+.screen .content {
+  text-align: center;
+}
+
+.screen h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #00ffff;
+}
+
+.screen p {
+  color: #aaa;
+  margin: 5px 0 0;
+}
+
+.base {
+  background: #111;
+  padding: 20px;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.key-row {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.key {
+  background: #333;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.space {
+  min-width: 200px;
+}
+
+.tab, .caps, .shift, .enter, .backspace, .ctrl {
+  min-width: 60px;
+}
 
 .binder {
   width: 40px;
