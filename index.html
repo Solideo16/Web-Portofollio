@@ -118,7 +118,38 @@
     <button onclick="nextPage()">Berikutnya ➡️</button>
   </div>
 </section>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop Interaktif</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="laptop">
+      <div class="screen">
+        <button class="nav-button left" onclick="prevImage()" aria-label="Sebelumnya">
+          <svg viewBox="0 0 24 24" fill="none" width="48" height="48" stroke="cyan" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <img id="laptopImage" src="https://imgur.com/dUyphW6.jpg" alt="Gambar Laptop" />
+        <button class="nav-button right" onclick="nextImage()" aria-label="Berikutnya">
+          <svg viewBox="0 0 24 24" fill="none" width="48" height="48" stroke="cyan" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+      <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST" class="form">
+        <input type="hidden" name="_next" value="terkirim.html">
+        <textarea name="message" placeholder="Tulis pesan Anda..." required></textarea>
+        <button type="submit" id="sendBtn">Kirim Pesan</button>
+        <p id="successMessage" style="display: none;">✅ Pesan Anda telah terkirim. Terima kasih :)</p>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
   <h2>Hubungi Kami</h2>
   <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false" />
