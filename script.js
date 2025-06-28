@@ -100,3 +100,37 @@ function prevPage() {
 
 // Inisialisasi saat halaman dibuka
 updatePages();
+const images = [
+  "https://i.imgur.com/Ut5rzOF.jpeg",
+  "https://i.imgur.com/YM3I7Gr.jpeg"
+];
+let currentIndex = 0;
+
+const imageEl = document.getElementById("laptop-image");
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
+
+function updateImage() {
+  imageEl.src = images[currentIndex];
+}
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
+});
+
+// Navigasi keyboard
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  } else if (e.key === "ArrowLeft") {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  }
+});
