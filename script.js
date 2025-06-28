@@ -100,3 +100,40 @@ function prevPage() {
 
 // Inisialisasi saat halaman dibuka
 updatePages();
+const images = [
+  "https://imgur.com/dUyphW6.jpg",
+  "https://imgur.com/kfdpRZm.jpg"
+];
+let currentIndex = 0;
+
+function showImage(index) {
+  const img = document.getElementById("laptopImage");
+  img.src = images[index];
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("kontakForm");
+  const message = document.getElementById("successMessage");
+
+  form.addEventListener("submit", () => {
+    setTimeout(() => {
+      message.style.display = "block";
+    }, 1000);
+  });
+
+  // Keyboard support
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+  });
+});
