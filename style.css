@@ -409,3 +409,40 @@ body {
 
 .key.wide { flex: 1 1 80px; }
 .key.space { flex: 1 1 300px; }
+.flipbook {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 70%;
+  perspective: 1500px;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  z-index: 1;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page.flipped {
+  transform: rotateY(180deg);
+  z-index: 0;
+}
