@@ -409,3 +409,16 @@ body {
 
 .key.wide { flex: 1 1 80px; }
 .key.space { flex: 1 1 300px; }
+/* ===== Gaya untuk interaktif laptop ===== */
+#interactive-laptop .wrapper { /* … */ }
+#interactive-laptop .laptop { /* … */ }
+#interactive-laptop .screen { /* … */ }
+#interactive-laptop .screen img { /* … */ }
+#interactive-laptop .controls button { /* … */ }
+#interactive-laptop textarea#messageBox { /* … */ }
+#interactive-laptop #sendBtn { /* … */ }
+#interactive-laptop .keyboard { /* … */ }
+#interactive-laptop .keyboard-row { /* … */ }
+#interactive-laptop .key { /* … */ }
+#interactive-laptop .key.wide { /* … */ }
+#interactive-laptop .key.space { /* … */ }
