@@ -118,7 +118,33 @@
     <button onclick="nextPage()">Berikutnya ➡️</button>
   </div>
 </section>
+<!-- Laptop Interaktif -->
+<section class="laptop-wrapper">
+  <div class="laptop-vertical">
+    <div class="screen">
+      <img id="laptop-image" src="https://i.imgur.com/Ut5rzOF.jpeg" alt="Gambar 1" />
+    </div>
+    <div class="keyboard">
+      <div class="key-row">
+        <div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div>
+        <div class="key">T</div><div class="key">Y</div><div class="key">U</div><div class="key">I</div>
+      </div>
+      <!-- Tambahkan baris lain jika mau -->
+    </div>
+  </div>
 
+  <!-- Tombol navigasi pakai SVG -->
+  <div class="navigation">
+    <button id="prev-btn" class="nav-btn" aria-label="Sebelumnya">
+      <!-- Panah kiri SVG -->
+      <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#333" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button id="next-btn" class="nav-btn" aria-label="Berikutnya">
+      <!-- Panah kanan SVG -->
+      <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#333" d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+  </div>
+</section>
   <h2>Hubungi Kami</h2>
   <form id="kontakForm" action="https://formsubmit.co/solideo123456@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false" />
