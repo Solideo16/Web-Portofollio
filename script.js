@@ -255,3 +255,31 @@ textarea#messageBox {
 
 .key.wide { flex: 1 1 80px; }
 .key.space { flex: 1 1 300px; }
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+function updatePages() {
+  pages.forEach((page, index) => {
+    if (index < currentPage) {
+      page.classList.add('flipped');
+    } else {
+      page.classList.remove('flipped');
+    }
+  });
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  if (currentPage > 0) {
+    currentPage--;
+    updatePages();
+  }
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  if (currentPage < pages.length) {
+    currentPage++;
+    updatePages();
+  }
+});
+
+updatePages();
